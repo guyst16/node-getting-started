@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: hello-world-node
 spec:
   selector:
     matchLabels:
-      app: hello-world
+      app: hello-world-node
   template:
     metadata:
       labels:
-        app: hello-world
+        app: hello-world-node
     spec:
       containers:
       - image: okteto/node-getting-started:hello-world
@@ -27,10 +27,10 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - name: "hello-world"
+  - name: "hello-world-node"
     port: 3000
   selector:
-    app: hello-world
+    app: hello-world-node
 
 ---
 
@@ -39,7 +39,7 @@ kind: Ingress
 metadata:
   name: hello-world-node
   annotations:
-    dev.okteto.com/generate-host: hello-world
+    dev.okteto.com/generate-host: hello-world-node
 spec:
   rules:
     - http:
