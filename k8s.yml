@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: hello-world-node
 spec:
   type: ClusterIP
   ports:
@@ -37,7 +37,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hello-world
+  name: hello-world-node
   annotations:
     dev.okteto.com/generate-host: hello-world
 spec:
@@ -46,7 +46,7 @@ spec:
         paths:
           - backend:
               service:
-                name: hello-world
+                name: hello-world-node
                 port:
                   number: 3000
             path: /
