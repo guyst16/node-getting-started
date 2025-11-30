@@ -14,9 +14,6 @@ spec:
       containers:
       - image: okteto/node-getting-started:hello-world
         name: hello-world
-        command: ["/bin/sh", "-c"]
-        # The specific command that causes the container to fail
-        args: ["exit 1"]
 
 ---
 
