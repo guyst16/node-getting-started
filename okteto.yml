@@ -1,5 +1,12 @@
+build:
+  context: .
+  dockerfile: Dockerfile
+  push: true
+  image: okteto.dev/node-getting-started:hello-world-node
+
 deploy:
   - kubectl apply -f k8s.yml
+  
 dev:
   hello-world-node:
     command: bash
