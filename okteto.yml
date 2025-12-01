@@ -4,7 +4,7 @@ build:
 
 deploy:
   - echo "OKTETO_BUILD_HELLO_WORLD_IMAGE=${OKTETO_BUILD_HELLO_WORLD_IMAGE}"
-  - kubectl apply -f k8s.yml
+  - envsubst < k8s.yml | kubectl apply -f -
 
 dev:
   hello-world-node:
