@@ -20,6 +20,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
   name: hello-world-node
 spec:
   type: ClusterIP
